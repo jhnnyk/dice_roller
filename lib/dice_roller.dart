@@ -13,11 +13,13 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var currentDiceRoll = 2;
+  var currentDiceRoll1 = 1;
+  var currentDiceRoll2 = 2;
 
   void rollDice() {
     setState(() {
-      currentDiceRoll = randomizer.nextInt(6) + 1;
+      currentDiceRoll1 = randomizer.nextInt(6) + 1;
+      currentDiceRoll2 = randomizer.nextInt(6) + 1;
     });
   }
 
@@ -28,9 +30,18 @@ class _DiceRollerState extends State<DiceRoller> {
       // the Center widget can still center it vertically
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(
-          'assets/images/dice-$currentDiceRoll.png',
-          width: 200,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/dice-$currentDiceRoll1.png',
+              width: 150,
+            ),
+            Image.asset(
+              'assets/images/dice-$currentDiceRoll2.png',
+              width: 150,
+            ),
+          ],
         ),
         const SizedBox(height: 20),
         ElevatedButton(
