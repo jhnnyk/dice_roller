@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dice_roller/styled_text.dart';
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.color1, this.color2, {super.key});
@@ -16,32 +15,9 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      child: const Center(
-        child: StyledText('whassup?'),
+      child: Center(
+        child: Image.asset('assets/images/dice-2.png', width: 200,),
       ),
     );
   }
 }
-
-// another way of doing it that I didn't like as much
-
-// class GradientContainer extends StatelessWidget {
-//   const GradientContainer({super.key, required this.colors});
-//   final List<Color> colors;
-
-//   @override
-//   Widget build(context) {
-//     return Container(
-//       decoration: BoxDecoration(
-//         gradient: LinearGradient(
-//           colors: colors,
-//           begin: Alignment.topLeft,
-//           end: Alignment.bottomRight,
-//         ),
-//       ),
-//       child: const Center(
-//         child: StyledText('whassup?'),
-//       ),
-//     );
-//   }
-// }
